@@ -6,8 +6,6 @@ import lombok.Getter;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
-import java.util.UUID;
 
 @Getter
 @Builder

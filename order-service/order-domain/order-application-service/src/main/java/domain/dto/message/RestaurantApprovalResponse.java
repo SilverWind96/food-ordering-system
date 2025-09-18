@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import valueobject.OrderApprovalStatus;
-import valueobject.PaymentStatus;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
