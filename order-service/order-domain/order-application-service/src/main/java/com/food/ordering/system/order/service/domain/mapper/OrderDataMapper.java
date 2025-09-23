@@ -35,8 +35,8 @@ public class OrderDataMapper {
                 .build();
     }
 
-    private List<OrderItem> orderItemsToOrderItemEntities( List<com.food.ordering.system.order.service.domain.dto.create.OrderItem> items) {
-        return items.stream().map(orderItem ->  OrderItem.builder()
+    private List<OrderItem> orderItemsToOrderItemEntities(List<com.food.ordering.system.order.service.domain.dto.create.OrderItem> items) {
+        return items.stream().map(orderItem -> OrderItem.builder()
                 .product(new Product(new ProductId(orderItem.getProductId())))
                 .quantity(orderItem.getQuantity())
                 .price(new Money(orderItem.getPrice()))
@@ -48,11 +48,11 @@ public class OrderDataMapper {
         return new StreetAddress(UUID.randomUUID(), address.getStreet(), address.getCity(), address.getPostalCode());
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse( Order order) {
+    public CreateOrderResponse orderToCreateOrderResponse(Order order, String message) {
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
-                .message("Order created successfully")
+                .message(message)
                 .build();
     }
 
